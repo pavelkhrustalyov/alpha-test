@@ -1,0 +1,9 @@
+.textarea {
+    resize: none;
+    min-height: 200px;
+}
+
+.textarea::placeholder {
+    vertical-align: bottom;
+    font-size: 17px;
+}

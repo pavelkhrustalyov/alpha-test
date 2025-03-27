@@ -1,0 +1,44 @@
+.product-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.page-controls {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 25px;
+}
+
+.icon {
+    fill: deepskyblue;
+}
+
+.filter-title {
+    margin-right: 10px;
+    color: deepskyblue;
+    cursor: pointer;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.more {
+    align-self: center;
+    margin: 20px 0;
+}
