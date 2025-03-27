@@ -6,17 +6,18 @@ import Navigation from './components/Navigation/Navigation'
 import CreateProductPage from './pages/CreateProductPage/CreateProductPage'
 import EditProductPage from './pages/EditProductPage/EditProductPage'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
+import MainPage from './pages/MainPage/MainPage'
 
 function App() {
   return (
     <div className="app">
       <Navigation />
       <Routes>
+          <Route path='/' index element={<MainPage />}  />
           <Route path='/products' element={<ProductsPage />} />
           <Route path='/product/:id' element={<ProductPage />} />
           <Route path="/create-product" element={<CreateProductPage />} />
           <Route path="/edit-product/:id" element={<EditProductPage />} />
-          <Route path='/' element={<Navigate to="/products" replace /> } />
           <Route path='*' element={<ErrorPage />} />
       </Routes>
     </div>

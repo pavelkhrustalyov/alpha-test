@@ -1,15 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { viteStaticCopy } from 'vite-plugin-static-copy';
-
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     react(),
-    viteStaticCopy({
-      targets: [
-        { src: 'public/_redirects', dest: '/' }
-      ]
-    })
   ],
   base: '/alpha-test/',
 });
+
+// https://github.com/pavelkhrustalyov/alpha-test
+// https://pavelkhrustalyov.github.io/alpha-test/products
