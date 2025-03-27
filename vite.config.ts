@@ -4,8 +4,8 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: '/alpha-test/',
+  base: '/alpha-test',
 });
 
 // https://github.com/pavelkhrustalyov/alpha-test
-// https://pavelkhrustalyov.github.io/alpha-test/products
+// https://pavelkhrustalyov.github.io/alpha-test
