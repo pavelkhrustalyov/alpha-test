@@ -5,7 +5,7 @@ import ProductsPage from './pages/ProductsPage/ProductsPage'
 import Navigation from './components/Navigation/Navigation'
 import CreateProductPage from './pages/CreateProductPage/CreateProductPage'
 import EditProductPage from './pages/EditProductPage/EditProductPage'
-import ErrorPage from './pages/ErrorPage/ErrorPage'
+// import ErrorPage from './pages/ErrorPage/ErrorPage'
 import MainPage from './pages/MainPage/MainPage'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path='/product/:id' element={<ProductPage />} />
         <Route path="/create-product" element={<CreateProductPage />} />
         <Route path="/edit-product/:id" element={<EditProductPage />} />
-        <Route path='*' element={<ErrorPage />} />
+        <Route path='*' element={<MainPage />} />
       </Routes>
     </div>
   )
