@@ -4,5 +4,4 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: '/alpha-test',
 });
