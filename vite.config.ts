@@ -6,6 +6,3 @@ export default defineConfig({
   ],
   base: '/alpha-test',
 });
-
-// https://github.com/pavelkhrustalyov/alpha-test
-// https://pavelkhrustalyov.github.io/alpha-test
