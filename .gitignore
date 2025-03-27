@@ -1,0 +1,71 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Thumbnails
+._*
+
+# Temporary files created by editors
+*.swp
+*.swo
+*.tmp
+*.log
+*.sublime-workspace
+
+# Ignore IDE and editor settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Vite
+dist/
+.vite/
+.vite-cache/
+.cache/
+*.env.local
+
+# Build files
+build/
+out/
+temp/
+.eslintcache
+.sass-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
+*.lcov
+jest.config.js
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# GitHub Pages build folder
+gh-pages-static/
+
+# Production build output for gh-pages
+docs/
+
+# Ignore compiled assets
+*.css.map
+*.js.map
+*.ts.map
+*.d.ts
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
