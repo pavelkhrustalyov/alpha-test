@@ -9,7 +9,7 @@ import Button from '../UI/Button/Button';
 import CustomSelect from '../UI/CustomSelect/CustomSelect';
 import { useNavigate } from 'react-router-dom';
 import { getAllCategories } from '../../store/CategorySlice';
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const CreateProduct = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -20,7 +20,7 @@ const CreateProduct = () => {
     }, [dispatch]);
 
     const { categories } = useSelector((state: RootState) => state.categories);
-    const { control, handleSubmit, formState: { errors }, register } = useForm({
+    const { handleSubmit, formState: { errors }, register } = useForm({
         defaultValues: {
             title: '',
             price: 1,
@@ -79,17 +79,10 @@ const CreateProduct = () => {
                 />
 
                 {errors.categoryId && <span className={classes.error}>{errors.categoryId.message}</span>}
-                <Controller
-                    name="categoryId"
-                    control={control}
-                    rules={{ required: "Категория обязательна" }}
-                    render={({ field }) => (
-                        <CustomSelect
-                            {...field}
-                            data={categories}
-                        />
-                    )}
-                />
+                    <CustomSelect
+                        data={categories}
+                        {...register("categoryId", { required: "Категория обязательна" })}
+                    />
                 
                 <Button color='primary'>Создать продукт</Button>
             </form>

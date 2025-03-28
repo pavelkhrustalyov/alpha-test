@@ -73,9 +73,15 @@ export const getProduct = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk(
     'products/deleteProduct',
-    async (id: number) => {
+    async (id: number, { getState }) => {
+        const state = getState() as RootState;
+        if (!state.auth.token) throw new Error('No Authorization'); 
         try {
-            await axios.delete(`${URL}/${id}`);
+            await axios.delete(`${URL}/${id}`, {
+                headers: {
+                    "Authorization": `Bearer ${state.auth.token.access_token}`
+                }
+            });
             return id;
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -89,9 +95,15 @@ export const deleteProduct = createAsyncThunk(
 
 export const createProduct = createAsyncThunk(
     'products/createProduct',
-    async (productData: IBodyProduct) => {
+    async (productData: IBodyProduct, { getState }) => {
+        const state = getState() as RootState;
+        if (!state.auth.token) throw new Error('No Authorization'); 
         try {
-            const product = await axios.post<IProduct>(URL, { ...productData });
+            const product = await axios.post<IProduct>(URL, { ...productData }, {
+                headers: {
+                    "Authorization": `Bearer ${state.auth.token.access_token}`
+                }
+            });
             return product.data;
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -105,9 +117,15 @@ export const createProduct = createAsyncThunk(
 
 export const editProduct = createAsyncThunk(
     'products/editProduct',
-    async ({ id, title, price }: { id: string, title: string, price: number }) => {
+    async ({ id, title, price }: { id: string, title: string, price: number }, { getState }) => {
+        const state = getState() as RootState;
+        if (!state.auth.token) throw new Error('No Authorization'); 
         try {
-            const product = await axios.put<IProduct>(`${URL}/${id}`, { title, price });
+            const product = await axios.put<IProduct>(`${URL}/${id}`, { title, price }, {
+                headers: {
+                    "Authorization": `Bearer ${state.auth.token.access_token}`
+                }
+            });
             return product.data;
         } catch (error) {
             if (error instanceof AxiosError) {
